@@ -1,11 +1,6 @@
 'use strict';
-
-
-
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
-
-
 
 // sidebar variables
 const sidebar = document.querySelector("[data-sidebar]");
@@ -13,8 +8,6 @@ const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-
-
 
 // testimonials variables
 const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
@@ -141,3 +134,12 @@ navigationLinks.forEach((link) => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".form");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevents the page from reloading
+    alert("Your message has been sent!!");
+    form.reset(); // Optional: Clears the form fields after submission
+  });
+});
